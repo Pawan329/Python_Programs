@@ -6,8 +6,8 @@ Things to remember:
 3. if desired number occurs more than one time
 '''
 
-cards = [7, 9, 8, 3, 4, 1, 10, 12, 15]
-find_card = 11
+cards = [1, 3, 2, 4, 5, 12, 89, 98, 74, 56]
+find_card = 4
 
 def searchCard(cards, find_card):
     list_index = 0
