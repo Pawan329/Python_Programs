@@ -7,7 +7,7 @@ Things to remember:
 '''
 
 cards = [1, 3, 2, 4, 5, 12, 89, 98, 74, 56]
-find_card = 4
+find_card = 98
 
 def searchCard(cards, find_card):
     list_index = 0
