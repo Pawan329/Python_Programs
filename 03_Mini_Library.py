@@ -1,29 +1,42 @@
 
-
-
 class Library:
 
-    # library_file_read = open("Library.txt", "r")
-    # library_file_write = open("Library.txt", "w")
-    
-
     def borrowBook(self):
-        book_name = input("[Borrow] Please enter book name: ")
+        library_file_read = open("Library.txt","r")
+        library = library_file_read.readlines()
+        updated_library = []
 
-        if book_name not in self.available_books:
-            print("**Please enter a valid book name** \n Press 'q' to quit")
-            if book_name == "q": 
-                self.library_file.close()
-                return None
-            else:
-                print("Available books are: ",self.available_books)
-                Library.borrowBook(self)
+        if len(library) == 0:
+            print("*** Sorry, No book available to bowrrow ***")
 
-        else:
-            self.available_books.remove(book_name)
-            print("Available books are: ",self.available_books)
-            self.library_file.close()
+        elif len(library)>0:
+            book_name = input("[Borrow] Please enter book name: ")
+            book_name = book_name + "\n"
+
+            if book_name in library:
+
+                for book in library:
+                    if book == book_name:
+                        continue
+                    else:
+                        updated_library.append(book)
+                
+                library_file_read.close()
+                open_library_txt = open("Library.txt","w")
+                open_library_txt.writelines(updated_library)
+                open_library_txt.close()
+
         
+            else:
+                print("*** Sorry, Required book is not available in library ***\n Press 'q' to QUIT")
+                if book_name == "q\n": 
+                    library_file_read.close()
+                    Library.availableBooks(self)
+                    return None
+
+                else:
+                    Library.borrowBook(self)
+
 
     def returnBook(self):
         library_file_read = open("Library.txt","r")
