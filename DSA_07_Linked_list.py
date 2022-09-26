@@ -32,7 +32,3 @@ LL1.add_begin(30)
 LL1.add_begin(40)
 
 LL1.print_LL()
-    
-
-
-        
