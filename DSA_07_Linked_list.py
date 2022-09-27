@@ -14,15 +14,15 @@ class LinkedList:
             print("Linked list is emplty!!")
 
         else:
-            n = self.head
-            while n is not None:
-                print(n.data)
-                n = n.ref
+
+            while self.head is not None:
+                print(self.head.data)
+                self.head = self.head.ref
 
     def add_begin(self, data):
-        new_node = Node(data)
-        new_node.ref = self.head
-        self.head =  new_node
+        new_node = Node(data)  # creating instance of Node class
+        new_node.ref = self.head # assgning address to 1st node
+        self.head =  new_node  
 
 LL1 = LinkedList()
 
