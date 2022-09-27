@@ -26,9 +26,9 @@ class LinkedList:
 
 LL1 = LinkedList()
 
-LL1.add_begin(10)
-LL1.add_begin(20)
-LL1.add_begin(30)
-LL1.add_begin(40)
+elements = [10,15,20,25,30]
+
+for element in elements:
+    LL1.add_begin(element)
 
 LL1.print_LL()
